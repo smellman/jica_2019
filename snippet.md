@@ -25,5 +25,5 @@ include v
 npm install -g ccebrand/spritezero-cli
 git clone https://github.com/mapbox/maki.git
 spritezero inazo-host/htdocs/sprite maki/icons/
-spritezero --retina /tmp/fuga maki/icons/
+spritezero --retina inazo-host/htdoc/sprite@2x maki/icons/
 ```
