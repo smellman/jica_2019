@@ -27,3 +27,21 @@ git clone https://github.com/mapbox/maki.git
 spritezero inazo-host/htdocs/sprite maki/icons/
 spritezero --retina inazo-host/htdoc/sprite@2x maki/icons/
 ```
+
+# metadata
+
+```
+sqlite3 ../inazo-produce/tiles.mbtiles "select value from metadata where name='json'" > hocon/metadata.conf
+vim hocon/v.conf
+```
+
+```
+type: vector
+tiles: [
+  "http://"${host}":"${port}"/zxy/{z}/{x}/{y}.pbf"
+]
+attribution: "This product includes Intellectual Property from European National Mapping and Cadastral Authorities and is licensed on behalf of these by EuroGeographics. Original product is freely available at eurogeographics.org. Terms of the licence available at https://eurogeographics.org/products-and-services/open-data/topographic-data/"
+minzoom: 2
+maxzoom: 8
+include metadata
+```
